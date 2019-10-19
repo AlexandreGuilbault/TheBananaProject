@@ -9,6 +9,12 @@ import torch.optim as optim
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+# Most of this code has been given by Udacity in the Deep Reinforcement Learning Nanodree
+# https://github.com/udacity/deep-reinforcement-learning/tree/master/p1_navigation
+
+# Main modifications would be the act and learn functions 
+# with the addition of a Double Q Network
+
 
 # buffer_size		- replay buffer size
 # batch_size		- minibatch size
@@ -63,7 +69,7 @@ class Agent():
             with torch.no_grad(): action_values = self.qnetwork_local(state.reshape(-1,self.repeat_frames, self.state_space))
             self.qnetwork_local.train() 
 
-            noise = 1.0#(torch.rand_like(action_values)*0.01+0.99) # To avoid being stuck in a loop
+            noise = 1.0#(torch.rand_like(action_values)*0.01+0.99) # Adding noise to sometime select second best action with close reward
             
             return np.argmax((action_values*noise).cpu().data.numpy())
         else: # Exploration

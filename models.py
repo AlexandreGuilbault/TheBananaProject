@@ -45,8 +45,6 @@ class MLP_QNetwork(nn.Module):
                 nn.ReLU(),
                 nn.Linear(self.hidden_size, self.action_space)                
                 )
-#        self.gru = nn.GRU(input_size=self.state_space, hidden_size=self.hidden_size, batch_first=True, num_layers=self.num_layers)
-#        self.linear = nn.Linear(self.hidden_size, self.action_space)
-#    
+
     def forward(self, state):
         return self.network(state.squeeze())
