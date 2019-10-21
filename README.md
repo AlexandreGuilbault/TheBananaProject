@@ -20,7 +20,7 @@ The task is episodic and the task is considered succeeded if the agent gets an a
 
 ### Setting up the environment
 
-The environment can be downloaded using one of the following links:
+This environment has been built using [Unity Machine Learning Agents](https://unity3d.com/machine-learning). The environment can be downloaded using one of the following links:
 - [Linux](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
 - [Mac OSX](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
 - [Windows (32-bit)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip)
@@ -40,6 +40,15 @@ Main required librairies:
 For this problem, an RNN has been used in order to have an idea of the movement in the 3D area. 
 
 <i>Note : </i> This wouldn't be necessary for that problem since the only movements are from the agent itself (therefore known action) and Bananas falling from the sky (always falling exactly along the same axis), but I've been able to achieve fair results using a Gated Recurrent Unit and stayed with this architecture in order to be ready for more complexed data. For example in the original DQN paper, 4 frames have been used before the CNN to let the model have a sense of the movements. 
+
+### The main files
+
+| Files | Description |
+| --------|--------:|
+| Report.ipynb | The main Jupyter Notebook to train and test the agent |
+| models.py | Contains the RNN model used by the agent to model the Q function |
+| dqn_agent.py | Contains the double Q learning agent |
+| train_dqn.py | Implement the function to train the DQN agent  |
 
 ### The Untrained Agent
 
