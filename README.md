@@ -29,7 +29,7 @@ This environment has been built using [Unity Machine Learning Agents](https://un
 Main required librairies:                
 
 | Library | Version |
-| --------|--------:|
+| :--------|--------:|
 | matplotlib | 3.1.1|
 | numpy | 1.17.2 |
 | python | 3.6.7 |
@@ -44,7 +44,7 @@ For this problem, an RNN has been used in order to have an idea of the movement 
 ### The main files
 
 | Files | Description |
-| --------|--------:|
+| :--------|:--------|
 | Report.ipynb | The main Jupyter Notebook to train and test the agent |
 | models.py | Contains the RNN model used by the agent to model the Q function |
 | dqn_agent.py | Contains the double Q learning agent |
